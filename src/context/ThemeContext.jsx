@@ -8,7 +8,7 @@ const getInitialTheme = () => {
       return storedPrefs
     }
 
-    const userMedia = window.matchedMedial('(prefers-color-scheme: dark')
+    const userMedia = window.matchMedia('(prefers-color-scheme: dark')
     if (userMedia.matches) {
       return 'dark'
     }
