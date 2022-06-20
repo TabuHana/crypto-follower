@@ -1,9 +1,9 @@
 import React from 'react'
 import CoinSearch from '../components/CoinSearch'
 
-const Home = () => {
+const Home = ( {coin} ) => {
   return (
-  <CoinSearch />
+  <CoinSearch coins={coin}/>
     )
 }
 
