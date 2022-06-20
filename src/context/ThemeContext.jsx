@@ -22,7 +22,7 @@ export const ThemeContext = createContext()
 export const ThemeProvider = ({ initialTheme, children }) => {
   const [theme, setTheme] = useState(getInitialTheme)
 
-  const rawSetTheme = ( theme ) => {
+  const rawSetTheme = (theme) => {
     const root = window.document.documentElement
     const isDark = theme === 'dark'
 
@@ -38,10 +38,10 @@ export const ThemeProvider = ({ initialTheme, children }) => {
 
   useEffect(() => {
     rawSetTheme(theme)
-  },[theme])
+  }, [theme])
 
   return (
-    <ThemeContext.Provider value={{theme, setTheme}}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
     </ThemeContext.Provider>
   )
