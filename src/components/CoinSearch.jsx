@@ -1,8 +1,62 @@
 import React from 'react'
+import { AiOutlineStar } from 'react-icons/ai'
+import { Sparklines, SparklinesLine } from "react-sparklines";
 
-const CoinSearch = () => {
+const CoinSearch = ({ coins }) => {
+
+
   return (
-    <div>CoinSearch</div>
+    <div>
+      <div>
+        <h1>Search Crypto</h1>
+        <form>
+          <input type='text' placeholder='Search coin'/>
+        </form>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>#</th>
+            <th>Coin</th>
+            <th></th>
+            <th>Price</th>
+            <th>24h</th>
+            <th>24h Volume</th>
+            <th>Market</th>
+            <th>Last 7 days</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {coins.map((coin) => (
+            <tr>
+              <td><AiOutlineStar/></td>
+              <td>{coin.market_cap_rank}</td>
+              <td>
+                <div>
+                  <img src={coin.image} alt={coin.id}/>
+                  <p>{coin.name}</p>
+                </div>
+              </td>
+              <td>{coin.symbol}</td>
+              <td>{coin.current_price}</td>
+              <td>{coin.current_change_percentage_24h}</td>
+              <td>{coin.total_volume}</td>
+              <td>{coin.market_cap}</td>
+              <td>
+                <Sparklines data={coin.sparkline_in_7d.price}>
+                  <SparklinesLine color='teal' />
+                </Sparklines>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+
+      </table>
+
+    </div>
   )
 }
 
