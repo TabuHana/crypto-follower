@@ -27,10 +27,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Home coins={coin}/>} />
-        <Route path='/login' element={<UserLogin />} />
-        <Route path='/signup' element={<UserSignup />} />
+        <Route path='/userlogin' element={<UserLogin />} />
+        <Route path='/usersignup' element={<UserSignup />} />
         <Route path='/account' element={<Account />} />
-        <Route path='/coin/:coinId' element={<CoinPage />}>
+        <Route path='/coins/:coinId' element={<CoinPage />}>
           <Route path=':coinId' />
         </Route>
       </Routes>

@@ -3,7 +3,7 @@ import { Sparklines, SparklinesLine } from "react-sparklines";
 import { FaTwitter, FaFacebook, FaReddit, FaGithub } from "react-icons/fa";
 import axios from 'axios'
 import DOMPurify from 'dompurify';
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
 const CoinPage = () => {
 
