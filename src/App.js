@@ -29,8 +29,8 @@ function App() {
         <Route path='/login' element={<UserLogin />} />
         <Route path='/signup' element={<UserSignup />} />
         <Route path='/account' element={<Account />} />
-        <Route path='/coin/:coinid' element={<CoinPage />}>
-          <Route />
+        <Route path='/coin/:coinId' element={<CoinPage />}>
+          <Route path=':coinId' />
         </Route>
       </Routes>
     </ThemeProvider>
