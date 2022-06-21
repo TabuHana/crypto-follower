@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { ThemeProvider } from "./context/ThemeContext";
-import Navbar from './components/Navbar'
 import { Route, Routes } from 'react-router-dom';
+import axios from "axios";
+
+import Navbar from './components/Navbar'
 import Home from './routes/Home';
 import UserLogin from './routes/UserLogin';
 import UserSignup from './routes/UserSignup';
 import Account from './routes/Account';
-import axios from "axios";
 import CoinPage from './routes/CoinPage';
 import Footer from './components/Footer';
 
 function App() {
-  const [coin, setCoin] = useState([])
+  const [coins, setCoins] = useState([])
 
   // has to be a string. no hidden key so leaving here x.x
   const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=12&page=1&sparkline=true'
 
   useEffect(() => {
     axios.get(url).then((response) => {
-      setCoin(response.data)
+      setCoins(response.data)
     })
   },[url])
 
@@ -26,11 +27,11 @@ function App() {
     <ThemeProvider>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home coins={coin}/>} />
+        <Route path='/' element={<Home coins={coins}/>} />
         <Route path='/userlogin' element={<UserLogin />} />
         <Route path='/usersignup' element={<UserSignup />} />
         <Route path='/account' element={<Account />} />
-        <Route path='/coins/:coinId' element={<CoinPage />}>
+        <Route path='/coin/:coinId' element={<CoinPage />}>
           <Route path=':coinId' />
         </Route>
       </Routes>
