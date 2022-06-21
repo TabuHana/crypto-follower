@@ -1,11 +1,8 @@
 import React from 'react'
-import ThemeToggle from "./ThemeToggle";
-import { AiOutlineInstagram } from "module";
-import {  } from "module";
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div className='text-center py-4'>Powered by Coin Gecko</div>
   )
 }
 
