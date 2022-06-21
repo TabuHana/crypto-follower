@@ -57,12 +57,12 @@ const Navbar = () => {
 
         <ul className='w-full p-4'>
 
-          <li className='border-b py-6'>
+          <li className='border-b py-6' onClick={handleNav}>
             <Link to='/'>Home</Link>
           </li>
 
-          <li className='border-b py-6'>
-            <Link to='/'>Account</Link>
+          <li className='border-b py-6' onClick={handleNav}>
+            <Link to='/account'>Account</Link>
           </li>
 
           <li className=' py-6'>
@@ -70,15 +70,21 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <div className='flex flex-col w-full p-4'>
-          <Link to='/userlogin'>
-            <button className='w-full my-2 p-3 bg-primary text-primary border border-secondary rounded-2xl shadow-xl'>Login</button>
-          </Link>
+        {user?.email ? (
+          <div className='flex flex-col w-full p-4'>
+            <button className='w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl' onClick={handleSignOut}>Logout</button>
+          </div>
+        ) : (
+            <div className='flex flex-col w-full p-4'>
+              <Link to='/userlogin'>
+                <button onClick={handleNav} className='w-full my-2 p-3 bg-primary text-primary border border-secondary rounded-2xl shadow-xl'>Login</button>
+              </Link>
 
-          <Link to='/usersignup'>
-            <button className='w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl'>Sign Up</button>
-          </Link>
-        </div>
+              <Link to='/usersignup'>
+                <button onClick={handleNav} className='w-full my-2 p-3 bg-button text-btnText rounded-2xl shadow-xl'>Sign Up</button>
+              </Link>
+            </div>
+        )}
       </div>
 
     </div>

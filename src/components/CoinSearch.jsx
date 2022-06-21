@@ -7,7 +7,7 @@ const CoinSearch = ({ coins }) => {
 
   return (
     <div className='rounded-div my-4'>
-      <div className='flex flex-col md:flex-row justify-between pt-44 pb-6 text-center md:text-right'>
+      <div className='flex flex-col md:flex-row justify-between pt-4 pb-6 text-center md:text-right'>
         <h1 className='text-2xl font-bold my-2'>Search Crypto</h1>
         <form>
           <input
@@ -34,15 +34,16 @@ const CoinSearch = ({ coins }) => {
         </thead>
 
         <tbody>
-          {coins.filter((value) => {
-            if (search === '') {
-              return value
-            } else if (value.name.toLowerCase().includes(search.toLowerCase())) {
-              return value
-            } else {
-              return value
-            }
-          })
+          {coins
+            .filter((value) => {
+              if (search === '') {
+                return value;
+              } else if (
+                value.name.toLowerCase().includes(search.toLowerCase())
+              ) {
+                return value;
+              }
+            })
             .map((coin) => (
               <CoinTool key={coin.id} coin={coin} />
             ))}

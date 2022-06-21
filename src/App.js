@@ -16,7 +16,7 @@ function App() {
   const [coins, setCoins] = useState([])
 
   // has to be a string. no hidden key so leaving here x.x
-  const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=12&page=1&sparkline=true'
+  const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=15&page=1&sparkline=true'
 
   useEffect(() => {
     axios.get(url).then((response) => {
