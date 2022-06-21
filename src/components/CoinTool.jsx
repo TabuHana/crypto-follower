@@ -10,7 +10,7 @@ const CoinTool = ({ coin }) => {
       <td><AiOutlineStar /></td>
       <td>{coin.market_cap_rank}</td>
       <td>
-        <Link to={`/coin/$${coin.id}`}>
+        <Link to={`/coin/${coin.id}`}>
         <div className='flex items-center'>
           <img src={coin.image} alt={coin.id} className='w-6 mr-2 rounded-full' />
           <p className='hidden sm:table-cell'>{coin.name}</p>
