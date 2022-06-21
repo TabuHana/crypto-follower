@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineClose, AiOutlineMenu, AiOutlineHome } from "react-icons/ai";
 import { UserAuth } from "../context/AuthContext";
 
 const Navbar = () => {
@@ -28,7 +28,15 @@ const Navbar = () => {
     <div className='rounded-div flex items-center justify-between h-20 font-bold'>
 
       <Link to='/'>
-        <h1 className='text-2xl'>CryptoFollower</h1>
+        {user?.email ? (
+          <div>
+            <AiOutlineHome className='pl-1' size={30} onClick={handleSignOut} />
+          </div>
+        ) : (
+          <div>
+            <h1 className='text-2xl'>CryptoFollower</h1>
+          </div>
+        )}
       </Link>
 
       <div className='hidden md:block'>
@@ -36,7 +44,7 @@ const Navbar = () => {
       </div>
 
       {user?.email ? (
-        <div>
+        <div className='hidden md:block pr-1'>
           <Link to='/account' className='p-4'>Account</Link>
           <button onClick={handleSignOut}>Logout</button>
         </div>
@@ -54,7 +62,6 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div className={nav ? 'md:hidden fixed left-0 top-20 flex flex-col items-center justify-between w-full h-[90%] bg-primary ease-in duration-300 z-10' : 'fixed left-[-100%] top-20 h-[90%] flex flex-col items-center justify-between ease-in duration-300'}>
-
         <ul className='w-full p-4'>
 
           <li className='border-b py-6' onClick={handleNav}>

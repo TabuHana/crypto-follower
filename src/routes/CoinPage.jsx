@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Sparklines, SparklinesLine } from "react-sparklines";
-import { FaTwitter, FaFacebook, FaReddit, FaGithub } from "react-icons/fa";
 import axios from 'axios'
 import DOMPurify from 'dompurify';
 import { useParams } from 'react-router-dom';
@@ -109,12 +108,6 @@ const CoinPage = () => {
               <p className='text-gray-500 text-sm'>Price Change(1y)</p>
               {coin.market_data ? (<p>{coin.market_data.price_change_percentage_1y.toFixed(2)}%</p>) : null}
             </div>
-          </div>
-          <div className='flex justify-around p-8 text-accent'>
-            <FaTwitter />
-            <FaFacebook />
-            <FaReddit />
-            <FaGithub />
           </div>
         </div>
       </div>

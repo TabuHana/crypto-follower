@@ -35,6 +35,7 @@ const CoinSearch = ({ coins }) => {
 
         <tbody>
           {coins
+            // eslint-disable-next-line array-callback-return
             .filter((value) => {
               if (search === '') {
                 return value;

@@ -45,7 +45,13 @@ const CoinTool = ({ coin }) => {
           </div>
         </Link>
       </td>
-      <td>{coin.symbol.toUpperCase()}</td>
+      <td>
+        <Link to={`/coin/${coin.id}`}>
+          <div>
+            {coin.symbol.toUpperCase()}
+          </div>
+        </Link>
+      </td>
       <td>${coin.current_price.toLocaleString()}</td>
       <td>
         {coin.price_change_percentage_24h > 0 ?

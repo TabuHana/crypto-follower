@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { AiFillLock, AiOutlineMail } from 'react-icons/ai'
 import { Link, useNavigate } from 'react-router-dom'
-import { signIn, UserAuth } from "../context/AuthContext";
+import { UserAuth } from "../context/AuthContext";
 
 const UserLogin = () => {
 
@@ -19,7 +19,7 @@ const UserLogin = () => {
       navigate('/account')
     } catch (e) {
       setError(e.message)
-      console.log(e.message)
+      console.log(error)
     }
   }
 

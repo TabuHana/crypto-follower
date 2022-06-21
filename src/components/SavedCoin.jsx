@@ -17,6 +17,7 @@ const SavedCoin = () => {
   },[user.email])
 
   const coinPath = doc(db, 'users', `${user.email}`)
+
   const deleteCoin = async (passedid) => {
     try {
       const result = coins.filter((item) => item.id !== passedid)
@@ -33,7 +34,7 @@ const SavedCoin = () => {
 
   return (
     <div>
-      {coins.length === 0 ? (<p>No saved coins. Save a coin to add to list. <Link to='/'></Link></p>) : (
+      {coins.length === 0 ? (<p>No saved coins. Save a coin to add to list. <Link to='/' className='text-accent'> Click to follow a coin.</Link></p>) : (
         <table className='w-full border-collapse text-center'>
           <thead>
             <tr className='border-b'>
@@ -58,7 +59,7 @@ const SavedCoin = () => {
                   </Link>
                 </td>
                 <td className='pl-8'>
-                  <AiOutlineClose onClick={deleteCoin(coin.id)} className='cursor-pointer'/>
+                  <AiOutlineClose onClick={() => deleteCoin(coin.id)} className='cursor-pointer'/>
                 </td>
               </tr>
             ))}
