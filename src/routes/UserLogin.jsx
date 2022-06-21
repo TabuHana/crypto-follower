@@ -25,7 +25,7 @@ const UserLogin = () => {
           <button>Login</button>
         </form>
         <p>
-          Don't have an account? <Link to='/usersignup'>Sign Up</Link>
+          Don't have an account? <Link to='/usersignup' className='text-accent'>Sign Up</Link>
         </p>
       </div>
     </div>
