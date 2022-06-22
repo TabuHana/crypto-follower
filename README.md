@@ -28,6 +28,7 @@
   ***
   ## Technologies Used
   - React
+  - Tailwindcss
   - Firebase
   - Dompurify
   - Axios
