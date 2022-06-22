@@ -1,6 +1,6 @@
 # Crypto-Follower
 
-  ![license](https://img.shields.io/badge/license-APACHE 2.0-blue)
+  ![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)
   
   [Live Site](https://cryptofollower-ca7ce.web.app/)
 
